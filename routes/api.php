@@ -10,7 +10,7 @@ const EMPLOYERS_ROUTE = '/employers';
 const WRONG_PARAMS = "Wrong params!";
 
 
-Route::redirect('/', EMPLOYERS_ROUTE);
+Route::redirect('/', '/api' . EMPLOYERS_ROUTE);
 
 Route::get(EMPLOYERS_ROUTE, function ()  {
     return ResponseController::json(EmployerController::get());

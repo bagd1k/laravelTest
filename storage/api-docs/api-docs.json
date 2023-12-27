@@ -1,0 +1,182 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Laravel x Swagger test",
+        "description": "Lorem ipsum....",
+        "version": "0.1"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000",
+            "description": "Local server"
+        }
+    ],
+    "paths": {
+        "/employers": {
+            "get": {
+                "tags": [
+                    "employers"
+                ],
+                "summary": "Get all the employers",
+                "description": "This endpoint returns all the existing empployers",
+                "operationId": "getEmployers",
+                "responses": {
+                    "200": {
+                        "description": "Employers list",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "id": {
+                                                "type": "integer"
+                                            },
+                                            "position": {
+                                                "type": "string"
+                                            },
+                                            "salary": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "employers"
+                ],
+                "summary": "Add new employer to the table",
+                "description": "This endpoint inserts new row into employers' table",
+                "operationId": "addEmployers",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "position",
+                                    "salary"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "description": "Employer's name",
+                                        "type": "string"
+                                    },
+                                    "position": {
+                                        "description": "Employer's job title",
+                                        "type": "string"
+                                    },
+                                    "salary": {
+                                        "description": "Employer's salary",
+                                        "type": "numeric"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "employers"
+                ],
+                "summary": "Delete existing employer from the table",
+                "description": "This endpoint inserts deletes row from employers' table",
+                "operationId": "deleteEmployers",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "required": [
+                                    "id"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "description": "Employer's row id",
+                                        "type": "numeric"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "employers"
+                ],
+                "summary": "Edit existing employer's row",
+                "description": "This endpoint inserts new row into employers' table",
+                "operationId": "editEmployers",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "required": [
+                                    "id"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "description": "Employer's row id",
+                                        "type": "numeric"
+                                    },
+                                    "name": {
+                                        "description": "Employer's name",
+                                        "type": "string"
+                                    },
+                                    "position": {
+                                        "description": "Employer's job title",
+                                        "type": "string"
+                                    },
+                                    "salary": {
+                                        "description": "Employer's salary",
+                                        "type": "numeric"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        }
+    }
+}

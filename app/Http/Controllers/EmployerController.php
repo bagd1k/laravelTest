@@ -8,7 +8,7 @@ class EmployerController extends Controller
 {
     /**
      * @OA\Get(
-     *     path="/employers",
+     *     path="/api/employers",
      *     summary="Get all the employers",
      *     tags={"employers"},
      *     description="This endpoint returns all the existing empployers",
@@ -54,7 +54,7 @@ class EmployerController extends Controller
 
     /**
      * @OA\Post(
-     *     path="/employers",
+     *     path="/api/employers",
      *     summary="Add new employer to the table",
      *     tags={"employers"},
      *     description="This endpoint inserts new row into employers' table",
@@ -78,7 +78,7 @@ class EmployerController extends Controller
      *          @OA\Property(
      *            description="Employer's salary",
      *            property="salary",
-     *            type="numeric"
+     *            type="integer"
      *          )
      *        )
      *      )
@@ -103,7 +103,7 @@ class EmployerController extends Controller
     }
     /**
      * @OA\Delete(
-     *     path="/employers",
+     *     path="/api/employers",
      *     summary="Delete existing employer from the table",
      *     tags={"employers"},
      *     description="This endpoint inserts deletes row from employers' table",
@@ -117,7 +117,7 @@ class EmployerController extends Controller
      *          @OA\Property(
      *            description="Employer's row id",
      *            property="id",
-     *            type="numeric"
+     *            type="integer"
      *          )
      *        )
      *      )
@@ -143,7 +143,7 @@ class EmployerController extends Controller
 
     /**
      * @OA\Patch(
-     *     path="/employers",
+     *     path="/api/employers",
      *     summary="Edit existing employer's row",
      *     tags={"employers"},
      *     description="This endpoint inserts new row into employers' table",
@@ -157,7 +157,7 @@ class EmployerController extends Controller
      *        @OA\Property(
      *             description="Employer's row id",
      *             property="id",
-     *             type="numeric"
+     *             type="integer"
      *           ),
      *          @OA\Property(
      *            description="Employer's name",
@@ -172,7 +172,7 @@ class EmployerController extends Controller
      *          @OA\Property(
      *            description="Employer's salary",
      *            property="salary",
-     *            type="numeric"
+     *            type="integer"
      *          )
      *        )
      *      )

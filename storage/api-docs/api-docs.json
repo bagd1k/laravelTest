@@ -12,7 +12,7 @@
         }
     ],
     "paths": {
-        "/employers": {
+        "/api/employers": {
             "get": {
                 "tags": [
                     "employers"
@@ -78,7 +78,7 @@
                                     },
                                     "salary": {
                                         "description": "Employer's salary",
-                                        "type": "numeric"
+                                        "type": "integer"
                                     }
                                 },
                                 "type": "object"
@@ -113,7 +113,7 @@
                                 "properties": {
                                     "id": {
                                         "description": "Employer's row id",
-                                        "type": "numeric"
+                                        "type": "integer"
                                     }
                                 },
                                 "type": "object"
@@ -148,7 +148,7 @@
                                 "properties": {
                                     "id": {
                                         "description": "Employer's row id",
-                                        "type": "numeric"
+                                        "type": "integer"
                                     },
                                     "name": {
                                         "description": "Employer's name",
@@ -160,7 +160,7 @@
                                     },
                                     "salary": {
                                         "description": "Employer's salary",
-                                        "type": "numeric"
+                                        "type": "integer"
                                     }
                                 },
                                 "type": "object"
